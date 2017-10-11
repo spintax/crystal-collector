@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="crystalstyle.css">
+    <style>
+        body {
+            background-image: url("caveback2.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-3 text-center"> Crystal Collector</h1>
+                        <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+                    </div>
+                </div>
+                <div class="card" style="width: 100%;">
+                    <div class="card-block">
+                        <h4 class="card-title text-center"> Instructions</h4>
+                        <p class="card-text text-center">You will be given a random number at the start of the game.<br> There are four crystals below. <br>                            By clicking on a crystal you will add a specific amount of points to your score. <br> You win
+                            the game by matching your score to the random number, you lose the game if your total score goes
+                            above the random number. <br> The value of each crystal is hidden until you click it. <br> Each
+                            time the game starts, the value of each crystal will chnge.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 col-xs-0 col-sm-0 col-lg-2">
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 100%;">
+                    <h5 class="title">Number to Match
+                        <div class="computer-number"></div>
+                    </h5>
+                    <br>
+                    <h5 class="your-number">Your Number</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 100%;">
+                    <div class="game-status">
+                        <div class="updatealert">
+                            <p></p>
+                        </div>
+                        <div class="wins">
+                            <p>Wins:</p>
+                        </div>
+                        <br>
+                        <div class="losses">
+                            <p>Losses:</p>
+                        </div>
+                        <!-- <p></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="row">
+            <div class="col-md-2" "col-lg-2" "col-sm-12" "col-xs-12"></div>
+            <div class="col-md-2">
+                <div class="card" style="width: 80%;">
+                    <img class="crystal"  src="crystalone.png"class="img-responsive">
+                </div>
+            </div>
+            <div class="col-md-2" "col-lg-2" "col-sm-12" "col-xs-12">
+                <div class="card" style="width: 80%;">
+                    <img class="crystal" src="crystaltwo.png" class="img-responsive" >
+                </div>
+            </div>
+            <div class="col-md-2" "col-lg-2" "col-sm-12" "col-xs-12">
+                <div class="card" style="width: 80%;">
+                    <img class="crystal" src="crystalthree.jpg" class="img-responsive">
+                </div>
+            </div>
+            <div class="col-md-2" "col-lg-2" "col-sm-12" "col-xs-12">
+                <div class="card" style="width: 80%;">
+                    <img class="crystal" src="crystalfour.jpg" class="img-responsive">
+                </div>
+            </div>
+        </div>
+
+
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+
+// <!-- ==============================JAVASCRIPT==================================== -->
+
+        <script>
+            var wins = 0
+            var losses = 0
+            var playerNumber = 0
+            var computerNumber = 0
+
+            var computerNumber = [Math.floor((Math.random() * 120) + 19)];
+            console.log(computerNumber);  
+            
+            var crystalValue = [Math.floor((Math.random() * 12) + 1)];
+            console.log(crystalValue);
+
+
+
+
+
+
+
+        </script>
+      
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

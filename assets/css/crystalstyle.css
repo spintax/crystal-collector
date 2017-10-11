@@ -1,0 +1,44 @@
+.card {
+    margin: 15px;
+}
+
+.display-3 {
+    font-family: '1960s Hippie';
+    font-size: 7.5rem;
+    
+}
+
+.display-3 {
+    color: white;  /* Fallback: assume this color ON TOP of image */
+    background: url(paisleyback.jpg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+
+ .jumbotron {
+     background-color: rgba(0, 0, 0, 0);
+     max-height: 175px;
+     padding-bottom: 25px;
+ }
+
+ .title {
+    font-family: '1960s Hippie';
+    font-size: 2.5rem;
+    color: white;  /* Fallback: assume this color ON TOP of image */
+    background: url(paisleyback.jpg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+
+ .your-number {
+    font-family: '1960s Hippie';
+    font-size: 2.5rem;
+    color: white;  /* Fallback: assume this color ON TOP of image */
+    background: url(paisleyback.jpg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+
+ .card-block {
+     background-color: rgba(0, 0, 0, 0);
+ }
