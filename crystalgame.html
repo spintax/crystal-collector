@@ -10,10 +10,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="crystalstyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/crystalstyle.css">
     <style>
         body {
-            background-image: url("caveback2.jpg");
+            background-image: url("assets/images/caveback2.jpg");
+        }
+
+        .display-3 {
+            color: white;
+            /* Fallback: assume this color ON TOP of image */
+            background: url(paisleyback.jpg);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title {
+            font-family: '1960s Hippie';
+            font-size: 2.5rem;
+            color: white;
+            background: url(paisleyback.jpg);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .your-number {
+            font-family: '1960s Hippie';
+            font-size: 2.5rem;
+            color: white;
+            background-image: url(paisleyback.jpg);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
@@ -52,6 +78,7 @@
                     </h5>
                     <br>
                     <h5 class="your-number">Your Number</h5>
+                    <div class="yournumber"></div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -74,56 +101,113 @@
         </div>
         <!-- </div> -->
         <div class="row">
-            <div class="col-md-2" "col-lg-2" "col-sm-12" "col-xs-12"></div>
+            <div class="col-md-2" "col-lg-2" "col-sm-6" "col-xs-6"></div>
             <div class="col-md-2">
                 <div class="card" style="width: 80%;">
-                    <img class="crystal"  src="crystalone.png"class="img-responsive">
+                    <img class="crystalUno" img class="crystal" img id="crystalOne" src="assets/images/crystalone.png" class="img-responsive">
                 </div>
             </div>
             <div class="col-md-2" "col-lg-2" "col-sm-12" "col-xs-12">
                 <div class="card" style="width: 80%;">
-                    <img class="crystal" src="crystaltwo.png" class="img-responsive" >
+                    <img class="crystal" img id="crystalTwo" src="assets/images/crystaltwo.png" class="img-responsive">
                 </div>
             </div>
             <div class="col-md-2" "col-lg-2" "col-sm-12" "col-xs-12">
                 <div class="card" style="width: 80%;">
-                    <img class="crystal" src="crystalthree.jpg" class="img-responsive">
+                    <img class="crystal" img id="crystalThree" src="assets/images/crystalthree.jpg" class="img-responsive">
                 </div>
             </div>
             <div class="col-md-2" "col-lg-2" "col-sm-12" "col-xs-12">
                 <div class="card" style="width: 80%;">
-                    <img class="crystal" src="crystalfour.jpg" class="img-responsive">
+                    <img class="crystal" img id="crystalFour" src="assets/images/crystalfour.jpg" class="img-responsive">
                 </div>
             </div>
         </div>
 
 
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-
-
-
-// <!-- ==============================JAVASCRIPT==================================== -->
+        <a href="#" class="btn btn-primary">Go somewhere</a> //
+        <!-- ==============================JAVASCRIPT==================================== -->
 
         <script>
             var wins = 0
             var losses = 0
-            var playerNumber = 0
-            var computerNumber = 0
+            var playernumber = []
+            // var computerNumber = 0
+            // var crystalId = ["crystalOne", "crystalTwo", "crystalThree", "crystalFour"];
 
             var computerNumber = [Math.floor((Math.random() * 120) + 19)];
-            console.log(computerNumber);  
-            
-            var crystalValue = [Math.floor((Math.random() * 12) + 1)];
-            console.log(crystalValue);
+            document.querySelector('.computer-number').innerHTML = computerNumber;
+            console.log(computerNumber);
+
+            var crystalNumbers = [];
+            for (var i = 0, l = 4; i < l; i++) {
+                crystalNumbers.push(Math.round(Math.random() * 12))
+                console.log(crystalNumbers);
+            }
+
+            var crystalOneVal = crystalNumbers.pop();
+            console.log(crystalOneVal)
+            var crystalTwoVal = crystalNumbers.pop();
+            console.log(crystalTwoVal)
+            var crystalThreeVal = crystalNumbers.pop();
+            console.log(crystalThreeVal)
+            var crystalFourVal = crystalNumbers.pop();
+            console.log(crystalFourVal)
+
+            // var playerTotal = playernumber.reduce(function (r, a) {
+            //                     if (r.length > 0)
+            //                         a += r[r.length - 1];
+            //                     r.push(a);
+            //                     return r;
+            //                     console.log(playerTotal)
+            //                 }, []);
 
 
 
+            document.getElementById("crystalOne").onclick = function () {
+                playernumber.push(crystalOneVal)
+                document.querySelector(".yournumber").innerHTML = crystalOneVal;
+                // console.log(playernumber)
+
+                var playerTotal = playernumber.reduce((a, b) => a + b);
+                            document.querySelector('.yournumber').innerHTML = playerTotal;
+                            console.log(playerTotal);
+
+                document.getElementById("crystalTwo").onclick = function () {
+                    playernumber.push(crystalTwoVal)
+                    document.querySelector(".yournumber").innerHTML = crystalTwoVal;
+                    // console.log(playernumber)
+
+                    var playerTotal = playernumber.reduce((a, b) => a + b);
+                            document.querySelector('.yournumber').innerHTML = playerTotal;
+                            console.log(playerTotal);
+
+                    document.getElementById("crystalThree").onclick = function () {
+                        playernumber.push(crystalThreeVal)
+                        document.querySelector(".yournumber").innerHTML = crystalThreeVal;
+                        // console.log(playernumber)
+
+                        var playerTotal = playernumber.reduce((a, b) => a + b);
+                            document.querySelector('.yournumber').innerHTML = playerTotal;
+                            console.log(playerTotal);
+
+                        document.getElementById("crystalFour").onclick = function () {
+                            playernumber.push(crystalFourVal)
+                             document.querySelector(".yournumber").innerHTML = crystalFourVal;
+                            // console.log(playernumber)
+
+                            var playerTotal = playernumber.reduce((a, b) => a + b);
+                            document.querySelector('.yournumber').innerHTML = playerTotal;
+                            console.log(playerTotal);
+
+                           
 
 
-
-
+                        }
+                    }
+                }
+            }
         </script>
-      
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -132,6 +216,9 @@
             crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
             crossorigin="anonymous"></script>
+
+
+
 </body>
 
 </html>
